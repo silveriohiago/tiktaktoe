@@ -1,0 +1,135 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #000;
+}
+
+.game {
+  width: 1024px;
+  height: 850px;
+  border: 1px solid green;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+.rows {
+  display: block;
+}
+
+.cols {
+  display: block;
+  float: left;
+}
+
+.game-player {
+  width: 800px;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.player {
+  width: 260px;
+  height: 200px;
+  cursor: pointer;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  position: relative;
+}
+
+.player span {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  font-size: 5em;
+  color: green;
+  margin: -25px 0 0 -25px;
+}
+
+.player-line-top {
+  border-top: 2px solid green;
+}
+
+.player-line-right {
+  border-right: 2px solid green;
+}
+
+.player-line-bottom {
+  border-bottom: 2px solid green;
+}
+
+.game-scoreboard {
+  color: green;
+  font-size: 2em;
+  display: inline-block;
+  border-bottom: 1px solid green;
+  width: 1024px;
+  margin-bottom: 30px;
+}
+
+.game-scoreboard-box {
+  margin-left: 305px;
+}
+
+.game-scoreboard-player {
+  width: 200px;
+  border: 1px solid green;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.player-left, .player-right {
+  padding: 10px;
+}
+
+.player-left {
+  float: left;
+}
+
+.player-right {
+  float: right;
+}
+
+.game-scoreboard-player span {
+  font-weight: bold;
+}
+
+.game-scoreboard-round, .game-scoreboard-title {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.game-scoreboard-title {
+  border-bottom: 1px solid;
+  margin-bottom: 18px;
+}
+
+.game-scoreboard-round {
+  border-top: 1px solid green;
+  margin-top: 8px;
+}
+
+.next-player {
+  background-color: green;
+  color: #000;
+}
+
+.winner {
+  background-color: #1e1e1e;
+}
+
+.game-options {
+  font-weight: bold;
+  font-size: 0.8em;
+  padding: 5px;
+  background-color: #000;
+  border: 1px solid green;
+  color: green;
+}

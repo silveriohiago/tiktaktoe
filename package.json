@@ -1,0 +1,15 @@
+{
+  "name": "jogo-da-velha",
+  "version": "1.0.0",
+  "description": "Jogo da Velha",
+  "main": "index.html",
+  "scripts": {
+    "start": "light-server -s . -p 8080 -w \"public/**/*.js, public/**/*.css, public/**/*.html\""
+  },
+  "author": "Hiago Silvério",
+  "license": "MIT",
+  "devDependencies": {
+    "light-server": "^2.9.1"
+  },
+  "type": "module"
+}

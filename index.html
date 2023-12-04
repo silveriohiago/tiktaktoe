@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="game">
+        <div class="game-scoreboard">
+          <div class="game-scoreboard-box">
+            <div class="game-scoreboard-player" id="placar-um">
+              <div class="player-left">X</div>
+              <div class="player-right"><span id="jogador-um">-</span></div>
+            </div>
+            <div class="game-scoreboard-player" id="placar-dois">
+              <div class="player-left">O</div>
+              <div class="player-right"><span id="jogador-dois">-</span></div>
+            </div>
+          </div>
+          <div class="game-scoreboard-round">
+            Sua vez <span id="jogando"></span> | Rodada <span id="rodada"></span>
+          </div>
+        </div>
+        <div class="game-player">
+    
+          <div class="rows">
+            <div class="rows">
+              <div class="player player-line-right player-line-bottom cols" id="TableCell-0">
+              </div>
+              <div class="player player-line-right player-line-bottom cols" id="TableCell-1">
+              </div>
+              <div class="player player-line-bottom cols" id="TableCell-2">
+              </div>
+            </div>
+            <div class="rows">
+              <div class="player player-line-right cols" id="TableCell-3">
+              </div>
+              <div class="player player-line-right cols" id="TableCell-4">
+              </div>
+              <div class="player cols" id="TableCell-5">
+              </div>
+            </div>
+            <div class="rows">
+              <div class="player player-line-right player-line-top cols" id="TableCell-6">
+              </div>
+              <div class="player player-line-right player-line-top cols" id="TableCell-7">
+              </div>
+              <div class="player player-line-top cols" id="TableCell-8">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <link rel="stylesheet" href="./public/css/style.css">
+    <script type="module" src="./src/components/game.js"></script>
+    <script type="module" src="./src/app.js"></script>
+    <script type="module" src="./public/js/script.js"></script>
+</body>
+</html>

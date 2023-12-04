@@ -1,0 +1,4 @@
+https://walde.co/2016/10/24/estrutura-de-diretorios-e-arquivos-em-projetos-node-js/
+jsfiddle.net/tiagoriego/v2fgL9dm
+jsfiddle.net/tiagoriego/vg4dub9c/41
+https://jsfiddle.net/tiagoriego/jh82b94k/
