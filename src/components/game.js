@@ -17,21 +17,6 @@ export class Game {
      
    } 
    
-   checkResults(array, player){
-
-      let indexArray = [];
-      
-      array.forEach( (arr, index) => { 
-         if(arr && arr === player) indexArray.push(index);  
-      });
-      
-      return this.#resultsTable.filter( (arr) => {
-        //console.log(indexArray);
-         return (JSON.stringify(arr) === JSON.stringify(indexArray));
-      }).length > 0;
-        
-   }
-   
    #config = {};
    
    get config(){
@@ -65,11 +50,34 @@ export class Game {
       [0, 1, 2],
       [3, 4, 5],
       [6, 7, 8],
-      [0, 5, 9],
+      [0, 4, 8],
       [2, 4, 6],
       [1, 4, 7],
       [0, 3, 6],
-      [2, 5, 8]
+      [2, 5, 8],
+      [0, 2, 4, 6],
+      [0, 2, 4, 8],
+      [0, 2, 4, 5, 6],
+      [0, 4, 6, 8],
+      [2, 4, 6, 8],
+      [2, 4, 6, 7],
+      [0, 2, 3, 6],
+      [1, 3, 4, 5],
+      [1, 6, 7, 8],
+      [0, 1, 2, 5],
+      [5, 6, 7, 8],
+      [0, 3, 4, 8],
+      [0, 4, 5, 8],
+      [1, 2, 5, 8],
+      [0, 3, 5, 6],
+      [0, 1, 4, 7],
+      [0, 1, 3, 6],
+      [2, 5, 6, 8],
+      [1, 4, 6, 7],
+      [1, 4, 5, 7],
+      [2, 3, 4, 6],
+      [2, 4, 5, 6],
+      [0, 3, 6, 7]
    ]
    
    get resultsTable(){
@@ -87,8 +95,6 @@ export class Game {
       }
    }
 
- 
-
    #findIfStraight(array, value){
       let maxIndex = 0;
       array.forEach( (arr, index) => { 
@@ -101,27 +107,53 @@ export class Game {
       return array.map( (a, i) => (a[i] === value) ).length;
    }
 
-   #checkTable(tableCell, position, value){
-      
+   checkTable(tableCell, position, value){
+
+      if(this.constructor.name === "Game" ){
+         return false;
+      }
+         
       if (!(position >= 0 && position <= 8)) {
-         throw new Error(this._config.errors.rangeOutOfIndex);
+         throw new Error(this.#config.errors.rangeOutOfIndex);
       }
 
       if(!tableCell) {
          return tableCell = value;
       } else
-         throw new Error(this._config.errors.cellNotEmpty);
+         throw new Error(this.#config.errors.cellNotEmpty);
+
+  
+   }
+
+   checkResults(array, player){
+
+ 
+      let indexArray = []
+      // caso for identificado o objeto do array
+    
+      array.forEach( (arr, index) => { 
+         if(arr && arr === player) indexArray.push(index);  
+      });
+      
+      return super.resultsTable.filter( (arr) => {
+         return (JSON.stringify(arr) === JSON.stringify(indexArray));
+      }).length > 0;
+      
    }
 
    play(position, value) {
 
       if(this.#flags.winner) {
          throw new Error("Já tem um vencedor reinicie a partida");
+      } 
+
+      if(!this.#table.some(cell => cell === null)){
+      throw new Error("Houve um empate, reinicie a partida");
       }
 
       //console.log("playing..");
       if(this.#config.playableObjects.includes(value) == true) {
-         this.#table[position] = this.#checkTable(this.#table[position], position, value);
+         this.#table[position] = this.checkTable(this.#table[position], position, value);
          console.log(`Inserido a posição com sucesso em ${position} com o valor ${value}`, this.#table);
       }
       else {
@@ -134,6 +166,5 @@ export class Game {
       }
       
    }
-  
 
 }
