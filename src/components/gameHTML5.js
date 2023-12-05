@@ -20,18 +20,18 @@ export class GameHTML5 extends Game {
 
     }
 
+
     newCheckResults(array, player){
 
 
       let indexArray = []
-      // caso for identificado o objeto do array
+      // filter in the table to get index where player have played
     
       array.forEach( (arr, index) => { 
          if(arr && arr === player) indexArray.push(index);  
       });
-      
-     // console.log(indexArray);
-      
+      console.log(indexArray);
+     // compare the player table with results table to find out if there's a winner
       return super.resultsTable.filter( (arr) => {
          return (JSON.stringify(arr) === JSON.stringify(indexArray));
       }).length > 0;
@@ -63,9 +63,16 @@ export class GameHTML5 extends Game {
 
         if(!super.flags.winner){
          super.flags.winner = this.newCheckResults(super.table, value) ? true : false;
-         if(super.flags.winner) alert(`O jogador "${value}" venceu!`);
-       }
+        } 
+        if(super.flags.winner) {
+            alert(`O jogador "${value}" venceu!`);
+            if(!localStorage.getItem(`player-${value}`))
+               localStorage.setItem(`player-${value}`, 1);
+            else {
+               localStorage.setItem(`player-${value}`, parseInt(localStorage.getItem(`player-${value}`)) + 1);
+            }
+        }
+    }
       
           
-     }
-}
+ }

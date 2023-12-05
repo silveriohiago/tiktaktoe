@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="display:none">
     <div class="game">
         <div class="game-scoreboard">
           <div class="game-scoreboard-box">
-          <!--  <div class="game-scoreboard-player" id="placar-um">
+           <div class="game-scoreboard-player" id="placar-um">
               <div class="player-left">X</div>
               <div class="player-right"><span id="jogador-um">-</span></div>
-            </div>-->
-           <!--  <div class="game-scoreboard-player" id="placar-dois">
+            </div>
+            <div class="game-scoreboard-player" id="placar-dois">
               <div class="player-left">O</div>
               <div class="player-right"><span id="jogador-dois">-</span></div>
-            </div> -->
+            </div>
+          </div>
+          <div class="game-action-buttons">
+           <button id="restart"> Reiniciar </button>
+           <button id="clear-board"> Limpar Placar</button>
           </div>
           <div class="game-scoreboard-round">
-            Jogador: <span id="jogando"></span> | Rodada <span id="rodada"></span>
+            Jogador: <span id="jogando">x</span> | Rodada <span id="rodada">1</span>
           </div>
         </div>
         <div class="game-player">
@@ -52,10 +56,9 @@
           </div>
         </div>
       </div>
-    
-    <link rel="stylesheet" href="./public/css/style.css">
     <script type="module" src="./src/components/game.js"></script>
     <script type="module" src="./src/app.js"></script>
     <script type="module" src="./public/js/script.js"></script>
+    <link rel="stylesheet" href="./public/css/style.css">
 </body>
 </html>

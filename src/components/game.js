@@ -77,7 +77,16 @@ export class Game {
       [1, 4, 5, 7],
       [2, 3, 4, 6],
       [2, 4, 5, 6],
-      [0, 3, 6, 7]
+      [0, 3, 6, 7],
+      [1, 2, 4, 6],
+      [1, 2, 3, 4, 6],
+      [0, 3, 4, 6, 8],
+      [0, 3, 4, 6],
+      [0, 1, 2, 5, 7],
+      [0, 2, 4, 5, 8],
+      [1, 2, 4, 7],
+      [0, 2, 4, 7, 8],
+      [0, 4, 5, 7, 8]
    ]
    
    get resultsTable(){
@@ -129,13 +138,14 @@ export class Game {
 
  
       let indexArray = []
-      // caso for identificado o objeto do array
-    
+
+      // filter in the table to get index where player have played
       array.forEach( (arr, index) => { 
          if(arr && arr === player) indexArray.push(index);  
       });
       
-      return super.resultsTable.filter( (arr) => {
+      // compare the player table with results table to find out if there's a winner
+      return this.#resultsTable.filter( (arr) => {
          return (JSON.stringify(arr) === JSON.stringify(indexArray));
       }).length > 0;
       
@@ -148,7 +158,7 @@ export class Game {
       } 
 
       if(!this.#table.some(cell => cell === null)){
-      throw new Error("Houve um empate, reinicie a partida");
+         throw new Error("Houve um empate, reinicie a partida");
       }
 
       //console.log("playing..");

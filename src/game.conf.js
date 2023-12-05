@@ -1,6 +1,5 @@
  export const APP_CONFIG = {
 // Kinds of enviroment Debug for only engine sources or appfull for full function
-  "players": 2,
   "playableObjects": ["o", "x"],
   "errors":{
     "cellNotEmpty": "Posição já preenchida inserir outro valor",
